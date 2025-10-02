@@ -1,57 +1,48 @@
 /* global Office */
+Office.onReady(() => { /* ready */ });
 
-Office.onReady(() => {
-  // Ready for command execution.
-});
-
-// Must be global (referenced by manifest)
+// Referenced by manifest
 function createQuote(event) {
-  try {
-    const item = Office.context.mailbox.item;
-    item.body.getAsync(Office.CoercionType.Html, async (result) => {
-      if (result.status !== Office.AsyncResultStatus.Succeeded) {
-        console.error("Failed to get email body:", result.error);
-        notify("Could not read email body.");
-        event.completed();
-        return;
-      }
+  const item = Office.context.mailbox.item;
 
-      const htmlBody = result.value;
-
-      try {
-        const resp = await fetch(
-          "https://amxmobileportalapi-cpbdh9gnanc7bces.centralus-01.azurewebsites.net/api/Quote/OutlookCreateQuote",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "text/plain"
-            },
-            body: htmlBody
-          }
-        );
-
-        if (!resp.ok) {
-          const text = await resp.text().catch(() => "");
-          console.error("API error:", resp.status, resp.statusText, text);
-          notify(`API failed: ${resp.status}`);
-        } else {
-          notify("Quote created.");
-        }
-      } catch (e) {
-        console.error("Network error:", e);
-        notify("Network error.");
-      }
-
+  item.body.getAsync(Office.CoercionType.Html, async (result) => {
+    if (result.status !== Office.AsyncResultStatus.Succeeded) {
+      console.error("Failed to get email body:", result.error);
+      notify("Could not read email body.");
       event.completed();
-    });
-  } catch (e) {
-    console.error(e);
-    notify("Unexpected error.");
+      return;
+    }
+
+    const htmlBody = result.value;
+
+    try {
+      const resp = await fetch(
+        "https://amxmobileportalapi-cpbdh9gnanc7bces.centralus-01.azurewebsites.net/api/Quote/OutlookCreateQuote",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain"
+          },
+          body: htmlBody
+        }
+      );
+
+      if (!resp.ok) {
+        const text = await resp.text().catch(() => "");
+        console.error("API error:", resp.status, resp.statusText, text);
+        notify(`API failed: ${resp.status}`);
+      } else {
+        notify("Quote created.");
+      }
+    } catch (e) {
+      console.error("Network error:", e);
+      notify("Network error.");
+    }
+
     event.completed();
-  }
+  });
 }
 
-// Lightweight toast
 function notify(message) {
   try {
     Office.context.mailbox.item.notificationMessages.replaceAsync("quoteStatus", {
@@ -60,10 +51,7 @@ function notify(message) {
       icon: "icon16",
       persistent: false
     });
-  } catch {
-    // noop
-  }
+  } catch { /* noop */ }
 }
 
-// Expose globally
 window.createQuote = createQuote;
