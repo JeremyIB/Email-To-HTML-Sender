@@ -8,7 +8,7 @@
   DefaultLocale="en-US"
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
   xsi:schemaLocation="http://schemas.microsoft.com/office/appforoffice/1.1 MailAppVersionOverrides.xsd"
-  Id="d2b3be3e-1111-4abc-9f77-000000000001"
+  Id="4a76c6b3-b127-4cb8-9f15-d1f6502b23d3"
   FullName="Create Quote"
   DisplayName="Create Quote"
   Description="Create a quote from the current email.">
@@ -83,3 +83,4 @@
     </ov:Resources>
   </VersionOverrides>
 </OfficeApp>
+
