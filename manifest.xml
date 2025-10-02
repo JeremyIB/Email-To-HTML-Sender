@@ -4,7 +4,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:type="MailApp"
   Version="1.0.0.0"
-  ProviderName="Your Company"
+  ProviderName="AMX"
   DefaultLocale="en-US"
   xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
   xsi:schemaLocation="http://schemas.microsoft.com/office/appforoffice/1.1 MailAppVersionOverrides.xsd"
@@ -23,7 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://YOUR_PAGES_HOST/commands.html"/>
+        <SourceLocation DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/commands.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -67,12 +67,12 @@
 
     <ov:Resources>
       <ov:Images>
-        <ov:Image id="residIcon16" DefaultValue="https://YOUR_PAGES_HOST/icon16.png"/>
-        <ov:Image id="residIcon32" DefaultValue="https://YOUR_PAGES_HOST/icon32.png"/>
-        <ov:Image id="residIcon80" DefaultValue="https://YOUR_PAGES_HOST/icon80.png"/>
+        <ov:Image id="residIcon16" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon16.png"/>
+        <ov:Image id="residIcon32" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon32.png"/>
+        <ov:Image id="residIcon80" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon80.png"/>
       </ov:Images>
       <ov:Urls>
-        <ov:Url id="residFunctionFileUrl" DefaultValue="https://YOUR_PAGES_HOST/commands.html"/>
+        <ov:Url id="residFunctionFileUrl" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/commands.html"/>
       </ov:Urls>
       <ov:ShortStrings>
         <ov:String id="residButtonLabel" DefaultValue="Create Quote"/>
