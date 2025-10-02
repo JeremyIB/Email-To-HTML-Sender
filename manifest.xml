@@ -60,4 +60,31 @@
                     <bt:Image size="80" resid="residIcon80"/>
                   </ov:Icon>
                   <ov:Action xsi:type="ExecuteFunction">
-                    <ov:FunctionName>cr
+                    <ov:FunctionName>createQuote</ov:FunctionName>
+                  </ov:Action>
+                </ov:Control>
+              </ov:Group>
+            </ov:OfficeTab>
+          </ov:ExtensionPoint>
+        </ov:DesktopFormFactor>
+      </ov:Host>
+    </ov:Hosts>
+
+    <ov:Resources>
+      <ov:Images>
+        <bt:Image id="residIcon16" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon16.png"/>
+        <bt:Image id="residIcon32" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon32.png"/>
+        <bt:Image id="residIcon80" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/icon80.png"/>
+      </ov:Images>
+      <ov:Urls>
+        <ov:Url id="residFunctionFileUrl" DefaultValue="https://jeremyib.github.io/Email-To-HTML-Sender/commands.html"/>
+      </ov:Urls>
+      <ov:ShortStrings>
+        <ov:String id="residButtonLabel" DefaultValue="Create Quote"/>
+      </ov:ShortStrings>
+      <ov:LongStrings>
+        <ov:String id="residButtonDesc" DefaultValue="Send this email's HTML to the Quote API."/>
+      </ov:LongStrings>
+    </ov:Resources>
+  </VersionOverrides>
+</OfficeApp>
